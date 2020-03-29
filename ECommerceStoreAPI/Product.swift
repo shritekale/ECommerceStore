@@ -9,7 +9,7 @@
 import Foundation
 import Fetch
 
-struct Product {
+struct Product: Decodable {
   let id: Int
   let name: String
   let category: String
@@ -44,17 +44,9 @@ extension ProductResponse: Parsable {
             }
         }
         do {
-            if let data = response.data, let parsedResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]] {
-                let products = parsedResponse.map { prod -> Product in
-                  let identifier = prod["id"] as! Int
-                  let name = prod["name"] as! String
-                  let category = prod["category"] as! String
-                  let price = prod["price"] as! String
-                  let oldPrice = prod["oldPrice"] as! String
-                  let stock = prod["stock"] as! Int
-                  return Product(id: identifier, name: name, category: category, price: price, oldPrice: oldPrice, stock: stock)
-                }
-                return .success(ProductResponse(products: products))
+            if let data = response.data {
+              let products: [Product] = try JSONDecoder().decode([Product].self, from: data)
+              return .success(ProductResponse(products: products))
             }
         } catch {}
         return .failure(ProductParseError.parseFailure)
