@@ -17,6 +17,11 @@
 		7202452B2430CF500058C344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720245292430CF500058C344 /* LaunchScreen.storyboard */; };
 		720245362430CF510058C344 /* ECommerceStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245352430CF510058C344 /* ECommerceStoreTests.swift */; };
 		720245412430CF510058C344 /* ECommerceStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245402430CF510058C344 /* ECommerceStoreUITests.swift */; };
+		7202455C2430CFC80058C344 /* ECommerceStoreAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720245532430CFC70058C344 /* ECommerceStoreAPI.framework */; };
+		720245632430CFC80058C344 /* ECommerceStoreAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245622430CFC80058C344 /* ECommerceStoreAPITests.swift */; };
+		720245652430CFC80058C344 /* ECommerceStoreAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 720245552430CFC70058C344 /* ECommerceStoreAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		720245682430CFC80058C344 /* ECommerceStoreAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720245532430CFC70058C344 /* ECommerceStoreAPI.framework */; };
+		720245692430CFC80058C344 /* ECommerceStoreAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720245532430CFC70058C344 /* ECommerceStoreAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +39,42 @@
 			remoteGlobalIDString = 720245152430CF4C0058C344;
 			remoteInfo = ECommerceStore;
 		};
+		7202455D2430CFC80058C344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7202450E2430CF4C0058C344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720245522430CFC70058C344;
+			remoteInfo = ECommerceStoreAPI;
+		};
+		7202455F2430CFC80058C344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7202450E2430CF4C0058C344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720245152430CF4C0058C344;
+			remoteInfo = ECommerceStore;
+		};
+		720245662430CFC80058C344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7202450E2430CF4C0058C344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 720245522430CFC70058C344;
+			remoteInfo = ECommerceStoreAPI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7202456D2430CFC80058C344 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				720245692430CFC80058C344 /* ECommerceStoreAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		720245162430CF4C0058C344 /* ECommerceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +93,12 @@
 		7202453C2430CF510058C344 /* ECommerceStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECommerceStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		720245402430CF510058C344 /* ECommerceStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreUITests.swift; sourceTree = "<group>"; };
 		720245422430CF510058C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720245532430CFC70058C344 /* ECommerceStoreAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ECommerceStoreAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720245552430CFC70058C344 /* ECommerceStoreAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECommerceStoreAPI.h; sourceTree = "<group>"; };
+		720245562430CFC70058C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7202455B2430CFC80058C344 /* ECommerceStoreAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECommerceStoreAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		720245622430CFC80058C344 /* ECommerceStoreAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreAPITests.swift; sourceTree = "<group>"; };
+		720245642430CFC80058C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720245682430CFC80058C344 /* ECommerceStoreAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +124,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		720245502430CFC70058C344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720245582430CFC80058C344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7202455C2430CFC80058C344 /* ECommerceStoreAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +148,8 @@
 				720245182430CF4C0058C344 /* ECommerceStore */,
 				720245342430CF510058C344 /* ECommerceStoreTests */,
 				7202453F2430CF510058C344 /* ECommerceStoreUITests */,
+				720245542430CFC70058C344 /* ECommerceStoreAPI */,
+				720245612430CFC80058C344 /* ECommerceStoreAPITests */,
 				720245172430CF4C0058C344 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +160,8 @@
 				720245162430CF4C0058C344 /* ECommerceStore.app */,
 				720245312430CF510058C344 /* ECommerceStoreTests.xctest */,
 				7202453C2430CF510058C344 /* ECommerceStoreUITests.xctest */,
+				720245532430CFC70058C344 /* ECommerceStoreAPI.framework */,
+				7202455B2430CFC80058C344 /* ECommerceStoreAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,7 +200,36 @@
 			path = ECommerceStoreUITests;
 			sourceTree = "<group>";
 		};
+		720245542430CFC70058C344 /* ECommerceStoreAPI */ = {
+			isa = PBXGroup;
+			children = (
+				720245552430CFC70058C344 /* ECommerceStoreAPI.h */,
+				720245562430CFC70058C344 /* Info.plist */,
+			);
+			path = ECommerceStoreAPI;
+			sourceTree = "<group>";
+		};
+		720245612430CFC80058C344 /* ECommerceStoreAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				720245622430CFC80058C344 /* ECommerceStoreAPITests.swift */,
+				720245642430CFC80058C344 /* Info.plist */,
+			);
+			path = ECommerceStoreAPITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7202454E2430CFC70058C344 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720245652430CFC80058C344 /* ECommerceStoreAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		720245152430CF4C0058C344 /* ECommerceStore */ = {
@@ -144,10 +239,12 @@
 				720245122430CF4C0058C344 /* Sources */,
 				720245132430CF4C0058C344 /* Frameworks */,
 				720245142430CF4C0058C344 /* Resources */,
+				7202456D2430CFC80058C344 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				720245672430CFC80058C344 /* PBXTargetDependency */,
 			);
 			name = ECommerceStore;
 			productName = ECommerceStore;
@@ -190,6 +287,43 @@
 			productReference = 7202453C2430CF510058C344 /* ECommerceStoreUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		720245522430CFC70058C344 /* ECommerceStoreAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7202456A2430CFC80058C344 /* Build configuration list for PBXNativeTarget "ECommerceStoreAPI" */;
+			buildPhases = (
+				7202454E2430CFC70058C344 /* Headers */,
+				7202454F2430CFC70058C344 /* Sources */,
+				720245502430CFC70058C344 /* Frameworks */,
+				720245512430CFC70058C344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECommerceStoreAPI;
+			productName = ECommerceStoreAPI;
+			productReference = 720245532430CFC70058C344 /* ECommerceStoreAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7202455A2430CFC80058C344 /* ECommerceStoreAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7202456E2430CFC80058C344 /* Build configuration list for PBXNativeTarget "ECommerceStoreAPITests" */;
+			buildPhases = (
+				720245572430CFC80058C344 /* Sources */,
+				720245582430CFC80058C344 /* Frameworks */,
+				720245592430CFC80058C344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7202455E2430CFC80058C344 /* PBXTargetDependency */,
+				720245602430CFC80058C344 /* PBXTargetDependency */,
+			);
+			name = ECommerceStoreAPITests;
+			productName = ECommerceStoreAPITests;
+			productReference = 7202455B2430CFC80058C344 /* ECommerceStoreAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,6 +345,13 @@
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 720245152430CF4C0058C344;
 					};
+					720245522430CFC70058C344 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					7202455A2430CFC80058C344 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 720245152430CF4C0058C344;
+					};
 				};
 			};
 			buildConfigurationList = 720245112430CF4C0058C344 /* Build configuration list for PBXProject "ECommerceStore" */;
@@ -229,6 +370,8 @@
 				720245152430CF4C0058C344 /* ECommerceStore */,
 				720245302430CF510058C344 /* ECommerceStoreTests */,
 				7202453B2430CF510058C344 /* ECommerceStoreUITests */,
+				720245522430CFC70058C344 /* ECommerceStoreAPI */,
+				7202455A2430CFC80058C344 /* ECommerceStoreAPITests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,6 +395,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7202453A2430CF510058C344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720245512430CFC70058C344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720245592430CFC80058C344 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,6 +446,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7202454F2430CFC70058C344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720245572430CFC80058C344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720245632430CFC80058C344 /* ECommerceStoreAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,6 +473,21 @@
 			isa = PBXTargetDependency;
 			target = 720245152430CF4C0058C344 /* ECommerceStore */;
 			targetProxy = 7202453D2430CF510058C344 /* PBXContainerItemProxy */;
+		};
+		7202455E2430CFC80058C344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 720245522430CFC70058C344 /* ECommerceStoreAPI */;
+			targetProxy = 7202455D2430CFC80058C344 /* PBXContainerItemProxy */;
+		};
+		720245602430CFC80058C344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 720245152430CF4C0058C344 /* ECommerceStore */;
+			targetProxy = 7202455F2430CFC80058C344 /* PBXContainerItemProxy */;
+		};
+		720245672430CFC80058C344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 720245522430CFC70058C344 /* ECommerceStoreAPI */;
+			targetProxy = 720245662430CFC80058C344 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -552,6 +739,96 @@
 			};
 			name = Release;
 		};
+		7202456B2430CFC80058C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ECommerceStoreAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.shri.ECommerceStoreAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7202456C2430CFC80058C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ECommerceStoreAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.shri.ECommerceStoreAPI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7202456F2430CFC80058C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ECommerceStoreAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.shri.ECommerceStoreAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECommerceStore.app/ECommerceStore";
+			};
+			name = Debug;
+		};
+		720245702430CFC80058C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ECommerceStoreAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.shri.ECommerceStoreAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECommerceStore.app/ECommerceStore";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,6 +864,24 @@
 			buildConfigurations = (
 				7202454C2430CF510058C344 /* Debug */,
 				7202454D2430CF510058C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7202456A2430CFC80058C344 /* Build configuration list for PBXNativeTarget "ECommerceStoreAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7202456B2430CFC80058C344 /* Debug */,
+				7202456C2430CFC80058C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7202456E2430CFC80058C344 /* Build configuration list for PBXNativeTarget "ECommerceStoreAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7202456F2430CFC80058C344 /* Debug */,
+				720245702430CFC80058C344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
