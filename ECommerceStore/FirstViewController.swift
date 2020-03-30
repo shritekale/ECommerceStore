@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import ECommerceStoreAPI
 
 class FirstViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    ECommerceStoreAPIRequests.fetchProducts()
   }
-
-
 }
 
