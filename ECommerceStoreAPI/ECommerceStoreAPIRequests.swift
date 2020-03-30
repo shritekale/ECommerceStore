@@ -12,17 +12,17 @@ import Fetch
 public typealias ProductResult<ProductResponse> = Result<ProductResponse, Error>
 
 public class ECommerceStoreAPIRequests {
-
+  
   public static func fetchProducts(completion: @escaping (ProductResult<ProductResponse>) -> Void) {
     let session = Session()
     let request = ProductRequest()
     session.perform(request) { (result: FetchResult<ProductResponse>) in
-        switch result {
-        case .success(let response):
-          completion(.success(response))
-        case .failure(let error):
-          completion(.failure(error))
-        }
+      switch result {
+      case .success(let response):
+        completion(.success(response))
+      case .failure(let error):
+        completion(.failure(error))
+      }
     }
   }
   
