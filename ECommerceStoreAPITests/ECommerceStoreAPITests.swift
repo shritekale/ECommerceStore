@@ -14,6 +14,8 @@ import Fetch
 
 class ProductTests: XCTestCase {
   
+  let request = ProductRequest()
+
   override func setUp() {
     // Put setup code here. This method is called before the invocation of each test method in the class.
   }
@@ -23,21 +25,16 @@ class ProductTests: XCTestCase {
   }
   
   func testRequestToGetProductsIsConfiguredCorrectly() {
-    let request = ProductRequest()
-    expect(request.url.absoluteString).to(equal("https://2klqdzs603.execute-api.eu-west-2.amazonaws.com/cloths/products"))
-    expect(request.body).to(beNil())
+    expect(self.request.url.absoluteString).to(equal("https://2klqdzs603.execute-api.eu-west-2.amazonaws.com/cloths/products"))
+    expect(self.request.body).to(beNil())
     
     let apiKey = request.headers!["X-API-KEY"]
     expect(apiKey).to(equal("DD95261772-4FC1-470B-ADE8-2E5D798E3172"))
   }
   
   func testResponseToGetProductsIsParsedCorrectlyWhenProductsAreReturned() {
-    let request = ProductRequest()
     let path = Bundle(for: ProductTests.self).path(forResource: "GetProductSuccessResponse", ofType: "json")
-    let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-    let testResponse = Response(data: data, status: 200, headers: nil, userInfo: nil, originalRequest: request)
-    
-    let result = ProductResponse.parse(response: testResponse, errorParser: nil)
+    let result = getParseResult(testFilePath: path)
     switch result {
     case .success(let response):
       expect(response.products.count).to(equal(13))
@@ -54,12 +51,8 @@ class ProductTests: XCTestCase {
   }
   
   func testResponseToGetProductsIsParsedCorrectlyWhenNoProductsAreReturned() {
-    let request = ProductRequest()
     let path = Bundle(for: ProductTests.self).path(forResource: "GetProductSuccessResponseNoProducts", ofType: "json")
-    let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-    let testResponse = Response(data: data, status: 200, headers: nil, userInfo: nil, originalRequest: request)
-    
-    let result = ProductResponse.parse(response: testResponse, errorParser: nil)
+    let result = getParseResult(testFilePath: path)
     switch result {
     case .success(let response):
       expect(response.products.count).to(equal(0))
@@ -70,12 +63,8 @@ class ProductTests: XCTestCase {
   }
   
   func testResponseToGetProductsReturnsErrorWhenParsingFails() {
-    let request = ProductRequest()
     let path = Bundle(for: ProductTests.self).path(forResource: "GetProductSuccessResponseMissingData", ofType: "json")
-    let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-    let testResponse = Response(data: data, status: 200, headers: nil, userInfo: nil, originalRequest: request)
-    
-    let result = ProductResponse.parse(response: testResponse, errorParser: nil)
+    let result = getParseResult(testFilePath: path)
     switch result {
     case .success(_):
       fail()
@@ -84,6 +73,11 @@ class ProductTests: XCTestCase {
       expect(error).toNot(beNil())
     }
   }
-
+  
+  private func getParseResult(testFilePath:String?) -> FetchResult<ProductResponse> {
+    let data = try! Data(contentsOf: URL(fileURLWithPath: testFilePath!), options: .mappedIfSafe)
+    let testResponse = Response(data: data, status: 200, headers: nil, userInfo: nil, originalRequest: request)
+    return ProductResponse.parse(response: testResponse, errorParser: nil)
+  }
 
 }
