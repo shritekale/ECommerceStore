@@ -9,21 +9,21 @@
 import Foundation
 import Fetch
 
+public typealias ProductResult<ProductResponse> = Result<ProductResponse, Error>
+
 public class ECommerceStoreAPIRequests {
-  
-  static let session = Session()
-  
-  public static func fetchProducts() {
+
+  public static func fetchProducts(completion: @escaping (ProductResult<ProductResponse>) -> Void) {
+    let session = Session()
     let request = ProductRequest()
     session.perform(request) { (result: FetchResult<ProductResponse>) in
         switch result {
         case .success(let response):
-            response.products.forEach { product in
-                print("\(product.name)")
-            }
+          completion(.success(response))
         case .failure(let error):
-            print("\(error)")
+          completion(.failure(error))
         }
     }
   }
+  
 }

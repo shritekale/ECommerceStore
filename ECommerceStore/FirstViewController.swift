@@ -13,7 +13,16 @@ class FirstViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    ECommerceStoreAPIRequests.fetchProducts()
+    ECommerceStoreAPIRequests.fetchProducts { (result: ProductResult<ProductResponse>) in
+        switch result {
+        case .success(let response):
+            response.products.forEach { product in
+                print("\(product.name)")
+            }
+        case .failure(let error):
+            print("\(error)")
+        }
+    }
   }
 }
 

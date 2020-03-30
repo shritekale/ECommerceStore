@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Product: Decodable {
-  let id: Int
-  let name: String
-  let category: String
-  let price: String
-  let oldPrice: String?
-  let stock: Int
+public struct Product: Decodable {
+  public let id: Int
+  public let name: String
+  public let category: String
+  public let price: String
+  public let oldPrice: String?
+  public let stock: Int
 }

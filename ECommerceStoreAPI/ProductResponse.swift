@@ -9,12 +9,12 @@
 import Foundation
 import Fetch
 
-struct ProductResponse {
-  let products: [Product]
+public struct ProductResponse {
+  public let products: [Product]
 }
 
 extension ProductResponse: Parsable {
-  static func parse(response: Response, errorParser: ErrorParsing.Type?) -> FetchResult<ProductResponse> {
+  public static func parse(response: Response, errorParser: ErrorParsing.Type?) -> FetchResult<ProductResponse> {
     if response.status != 200 {
       if let error = errorParser?.parseError(from: response.data, statusCode: response.status) {
         return .failure(error)
