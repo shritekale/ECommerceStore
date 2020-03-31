@@ -11,6 +11,7 @@
 		7200223224322C210021CEF5 /* GetProductSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7200223124322C210021CEF5 /* GetProductSuccessResponse.json */; };
 		7200223424322F910021CEF5 /* GetProductSuccessResponseNoProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7200223324322F910021CEF5 /* GetProductSuccessResponseNoProducts.json */; };
 		7200223624322FF90021CEF5 /* GetProductSuccessResponseMissingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7200223524322FF90021CEF5 /* GetProductSuccessResponseMissingData.json */; };
+		7200223B243342750021CEF5 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7200223A243342750021CEF5 /* ProductViewCell.swift */; };
 		7202451A2430CF4C0058C344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245192430CF4C0058C344 /* AppDelegate.swift */; };
 		7202451C2430CF4C0058C344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202451B2430CF4C0058C344 /* SceneDelegate.swift */; };
 		7202451E2430CF4C0058C344 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202451D2430CF4C0058C344 /* FirstViewController.swift */; };
@@ -34,6 +35,8 @@
 		720245812432180C0058C344 /* ECommerceStoreAPIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245802432180C0058C344 /* ECommerceStoreAPIRequests.swift */; };
 		72024582243219550058C344 /* Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720245752430DE780058C344 /* Fetch.framework */; platformFilter = ios; };
 		72024583243219550058C344 /* Fetch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720245752430DE780058C344 /* Fetch.framework */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7276C7A62433CA4200C0E963 /* ProductListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */; };
+		7276C7A82433D4B000C0E963 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A72433D4B000C0E963 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,7 @@
 		7200223124322C210021CEF5 /* GetProductSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetProductSuccessResponse.json; sourceTree = "<group>"; };
 		7200223324322F910021CEF5 /* GetProductSuccessResponseNoProducts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetProductSuccessResponseNoProducts.json; sourceTree = "<group>"; };
 		7200223524322FF90021CEF5 /* GetProductSuccessResponseMissingData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetProductSuccessResponseMissingData.json; sourceTree = "<group>"; };
+		7200223A243342750021CEF5 /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
 		720245162430CF4C0058C344 /* ECommerceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720245192430CF4C0058C344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7202451B2430CF4C0058C344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		72024579243214210058C344 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 		7202457B243214EF0058C344 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		720245802432180C0058C344 /* ECommerceStoreAPIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreAPIRequests.swift; sourceTree = "<group>"; };
+		7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSource.swift; sourceTree = "<group>"; };
+		7276C7A72433D4B000C0E963 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72002237243342290021CEF5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				7200223A243342750021CEF5 /* ProductViewCell.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		7202450D2430CF4C0058C344 = {
 			isa = PBXGroup;
 			children = (
@@ -199,10 +213,13 @@
 		720245182430CF4C0058C344 /* ECommerceStore */ = {
 			isa = PBXGroup;
 			children = (
+				72002237243342290021CEF5 /* New Group */,
 				720245192430CF4C0058C344 /* AppDelegate.swift */,
 				7202451B2430CF4C0058C344 /* SceneDelegate.swift */,
 				7202451D2430CF4C0058C344 /* FirstViewController.swift */,
+				7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */,
 				7202451F2430CF4C0058C344 /* SecondViewController.swift */,
+				7276C7A72433D4B000C0E963 /* Extension+String.swift */,
 				720245212430CF4C0058C344 /* Main.storyboard */,
 				720245272430CF500058C344 /* Assets.xcassets */,
 				720245292430CF500058C344 /* LaunchScreen.storyboard */,
@@ -496,8 +513,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7276C7A82433D4B000C0E963 /* Extension+String.swift in Sources */,
 				720245202430CF4C0058C344 /* SecondViewController.swift in Sources */,
+				7276C7A62433CA4200C0E963 /* ProductListDataSource.swift in Sources */,
 				720245262430CF4C0058C344 /* ECommerceStore.xcdatamodeld in Sources */,
+				7200223B243342750021CEF5 /* ProductViewCell.swift in Sources */,
 				7202451E2430CF4C0058C344 /* FirstViewController.swift in Sources */,
 				7202451A2430CF4C0058C344 /* AppDelegate.swift in Sources */,
 				7202451C2430CF4C0058C344 /* SceneDelegate.swift in Sources */,
