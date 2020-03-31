@@ -20,7 +20,6 @@
 		720245262430CF4C0058C344 /* ECommerceStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 720245242430CF4C0058C344 /* ECommerceStore.xcdatamodeld */; };
 		720245282430CF500058C344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720245272430CF500058C344 /* Assets.xcassets */; };
 		7202452B2430CF500058C344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720245292430CF500058C344 /* LaunchScreen.storyboard */; };
-		720245362430CF510058C344 /* ECommerceStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245352430CF510058C344 /* ECommerceStoreTests.swift */; };
 		720245412430CF510058C344 /* ECommerceStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245402430CF510058C344 /* ECommerceStoreUITests.swift */; };
 		7202455C2430CFC80058C344 /* ECommerceStoreAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720245532430CFC70058C344 /* ECommerceStoreAPI.framework */; platformFilter = ios; };
 		720245632430CFC80058C344 /* ECommerceStoreAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245622430CFC80058C344 /* ECommerceStoreAPITests.swift */; };
@@ -37,6 +36,9 @@
 		72024583243219550058C344 /* Fetch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720245752430DE780058C344 /* Fetch.framework */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7276C7A62433CA4200C0E963 /* ProductListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */; };
 		7276C7A82433D4B000C0E963 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A72433D4B000C0E963 /* Extension+String.swift */; };
+		7276C7AA2433D97A00C0E963 /* ProductListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */; };
+		7276C7AD2433DB0D00C0E963 /* TestProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7AC2433DB0D00C0E963 /* TestProducts.swift */; };
+		7276C7AF2433DC8300C0E963 /* TestProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = 7276C7AE2433DC8300C0E963 /* TestProducts.json */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,6 @@
 		7202452A2430CF500058C344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7202452C2430CF500058C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720245312430CF510058C344 /* ECommerceStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECommerceStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		720245352430CF510058C344 /* ECommerceStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreTests.swift; sourceTree = "<group>"; };
 		720245372430CF510058C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7202453C2430CF510058C344 /* ECommerceStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECommerceStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		720245402430CF510058C344 /* ECommerceStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreUITests.swift; sourceTree = "<group>"; };
@@ -130,6 +131,9 @@
 		720245802432180C0058C344 /* ECommerceStoreAPIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreAPIRequests.swift; sourceTree = "<group>"; };
 		7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSource.swift; sourceTree = "<group>"; };
 		7276C7A72433D4B000C0E963 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSourceTests.swift; sourceTree = "<group>"; };
+		7276C7AC2433DB0D00C0E963 /* TestProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProducts.swift; sourceTree = "<group>"; };
+		7276C7AE2433DC8300C0E963 /* TestProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestProducts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +236,10 @@
 		720245342430CF510058C344 /* ECommerceStoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				720245352430CF510058C344 /* ECommerceStoreTests.swift */,
 				720245372430CF510058C344 /* Info.plist */,
+				7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */,
+				7276C7AC2433DB0D00C0E963 /* TestProducts.swift */,
+				7276C7AE2433DC8300C0E963 /* TestProducts.json */,
 			);
 			path = ECommerceStoreTests;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				7202452D2430CF510058C344 /* Sources */,
 				7202452E2430CF510058C344 /* Frameworks */,
 				7202452F2430CF510058C344 /* Resources */,
+				7276C7B02433DD6F00C0E963 /* Carthage copy framework */,
 			);
 			buildRules = (
 			);
@@ -456,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7276C7AF2433DC8300C0E963 /* TestProducts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +514,25 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		7276C7B02433DD6F00C0E963 /* Carthage copy framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "Carthage copy framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -528,7 +555,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720245362430CF510058C344 /* ECommerceStoreTests.swift in Sources */,
+				7276C7AD2433DB0D00C0E963 /* TestProducts.swift in Sources */,
+				7276C7AA2433D97A00C0E963 /* ProductListDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Almond Toe Court Shoes, Patent Black",
+    "category": "Women’s Footwear",
+    "price": "99.00",
+    "oldPrice": null,
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "name": "Suede Shoes, Blue",
+    "category": "Women’s Footwear",
+    "price": "42.00",
+    "oldPrice": null,
+    "stock": 4
+  }
+]
