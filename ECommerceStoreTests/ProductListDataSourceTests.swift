@@ -14,7 +14,6 @@ import ECommerceStoreAPI
 
 class ProductListDataSourceTests: XCTestCase {
   
-  let productListDataSource = ProductListDataSource()
     
   func testProductsAreLoadedCorrectly() {
     let products = TestProducts.getProducts()
@@ -22,6 +21,8 @@ class ProductListDataSourceTests: XCTestCase {
   }
   
   func testDataSourceReturnsCorrectNumberOfCells() {
+    let mockViewCellDelegatge = MockViewCellDelegate()
+    let productListDataSource = ProductListDataSource(viewCellDelegate: mockViewCellDelegatge)
     let tableView = UITableView()
     let numberOfCellsBeforeUpdate = productListDataSource.tableView(tableView, numberOfRowsInSection: 0)
     expect(numberOfCellsBeforeUpdate).to(equal(0))
@@ -31,4 +32,9 @@ class ProductListDataSourceTests: XCTestCase {
     expect(numberOfCellsAfterUpdate).to(equal(2))
   }
 
+}
+
+class MockViewCellDelegate: ProductViewCellProtocol {
+  func addProductToCart(_ product: Product) {}
+  func addProductToWishList(_ product: Product) {}
 }

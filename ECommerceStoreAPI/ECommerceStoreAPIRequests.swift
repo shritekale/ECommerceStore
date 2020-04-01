@@ -10,6 +10,7 @@ import Foundation
 import Fetch
 
 public typealias ProductResult<ProductResponse> = Result<ProductResponse, Error>
+public typealias AddToCartResult<AddToCartResponse> = Result<AddToCartResponse, Error>
 
 public class ECommerceStoreAPIRequests {
   
@@ -24,6 +25,20 @@ public class ECommerceStoreAPIRequests {
         completion(.failure(error))
       }
     }
+  }
+  
+  public static func addProductToCart(product:Product, completion: @escaping (AddToCartResult<AddToCartResponse>) -> Void) {
+    let session = Session()
+    let request = AddToCartRequest(productId: String(product.id))
+    session.perform(request) { (result: FetchResult<AddToCartResponse>) in
+      switch result {
+      case .success(let response):
+        completion(.success(response))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+
   }
   
 }

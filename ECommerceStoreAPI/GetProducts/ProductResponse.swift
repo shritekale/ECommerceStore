@@ -40,6 +40,7 @@ enum ProductParseError: Error, ErrorParsing {
     if statusCode != 200 {
       return ProductParseError.non200Response
     }
+    
     return nil
   }
 }
