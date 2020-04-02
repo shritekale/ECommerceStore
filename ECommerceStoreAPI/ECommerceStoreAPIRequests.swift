@@ -11,6 +11,7 @@ import Fetch
 
 public typealias ProductResult<ProductResponse> = Result<ProductResponse, Error>
 public typealias AddToCartResult<AddToCartResponse> = Result<AddToCartResponse, Error>
+public typealias GetCartResult<CartResponse> = Result<CartResponse, Error>
 
 public class ECommerceStoreAPIRequests {
   
@@ -40,5 +41,19 @@ public class ECommerceStoreAPIRequests {
     }
 
   }
+  
+  public static func fetchCart(completion: @escaping (GetCartResult<CartResponse>) -> Void) {
+    let session = Session()
+    let request = CartRequest()
+    session.perform(request) { (result: FetchResult<CartResponse>) in
+      switch result {
+      case .success(let response):
+        completion(.success(response))
+      case .failure(let error):
+        completion(.failure(error))
+      }
+    }
+  }
+
   
 }

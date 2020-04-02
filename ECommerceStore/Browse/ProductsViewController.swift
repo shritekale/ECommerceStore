@@ -18,28 +18,14 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    productListDataSource = ProductListDataSource(viewCellDelegate: self)
+    productListDataSource = ProductListDataSource(tableView: productTableView, viewCellDelegate: self)
     productTableView.dataSource = productListDataSource
-    fetchProducts()
+    productListDataSource?.updateProducts()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    productTableView.reloadData()
-  }
-
-  private func fetchProducts() {
-    ECommerceStoreAPIRequests.fetchProducts { [weak self] (result: ProductResult<ProductResponse>) in
-        switch result {
-        case .success(let response):
-          self?.productListDataSource?.updateProducts(products: response.products)
-          DispatchQueue.main.async {
-            self?.productTableView.reloadData()
-          }
-        case .failure(_):
-          self?.showSimpleAlert(withMessage: "Something went wrong while fetching products")
-        }
-    }
+    productListDataSource?.updateProducts()
   }
   
   // MARK:- Delegate methods
@@ -48,7 +34,7 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
         switch result {
         case .success(let response):
           self?.showSimpleAlert(withMessage: response.message)
-          self?.fetchProducts()
+          self?.productListDataSource?.updateProducts()
         case .failure(let error):
           print(error.localizedDescription)
           self?.showSimpleAlert(withMessage: error.localizedDescription)

@@ -13,15 +13,17 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
 
   private var products : [Product] = [Product]()
   private let viewCellDelegate: ProductViewCellDelegate
+  private let tableView: UITableView
 
-  init(viewCellDelegate: ProductViewCellDelegate) {
-      self.viewCellDelegate = viewCellDelegate
+  init(tableView: UITableView, viewCellDelegate: ProductViewCellDelegate) {
+    self.viewCellDelegate = viewCellDelegate
+    self.tableView = tableView
   }
   
-  func updateProducts(products: [Product]) {
-    self.products = products
+  func updateProducts() {
+    fetchProducts()
   }
-
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return products.count
   }
@@ -31,6 +33,18 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
     let viewModel = ProductViewModel(product: products[indexPath.row])
     cell.configure(withViewModel: viewModel, delegate: viewCellDelegate)
     return cell
+  }
+  
+  private func fetchProducts() {
+    ECommerceStoreAPIRequests.fetchProducts { [weak self] (result: ProductResult<ProductResponse>) in
+        switch result {
+        case .success(let response):
+          self?.products = response.products
+          self?.tableView.reloadData()
+        case .failure(_):
+          print("error")
+        }
+    }
   }
   
 }
