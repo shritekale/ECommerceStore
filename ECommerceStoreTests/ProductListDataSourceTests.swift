@@ -14,7 +14,6 @@ import ECommerceStoreAPI
 
 class ProductListDataSourceTests: XCTestCase {
   
-    
   func testProductsAreLoadedCorrectly() {
     let products = TestProducts.getProducts()
     expect(products.count).to(equal(2))
@@ -38,5 +37,4 @@ class MockViewCellDelegate: ProductViewCellDelegate {
   func addProductToCart(_ viewModel: ProductRepresentable) {}
   func addProductToWishList(_ viewModel: ProductRepresentable) {}
   func removeProductFromWishList(_ viewModel: ProductRepresentable) {}
-
 }

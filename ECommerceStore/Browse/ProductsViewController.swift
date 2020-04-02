@@ -13,7 +13,7 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
   
   @IBOutlet weak var productTableView: UITableView!
   
-  var productListDataSource: ProductListDataSource?
+  private var productListDataSource: ProductListDataSource?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +23,11 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
     fetchProducts()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    productTableView.reloadData()
+  }
+
   private func fetchProducts() {
     ECommerceStoreAPIRequests.fetchProducts { [weak self] (result: ProductResult<ProductResponse>) in
         switch result {
@@ -31,13 +36,13 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
           DispatchQueue.main.async {
             self?.productTableView.reloadData()
           }
-        case .failure(let error):
-          print(error.localizedDescription)
+        case .failure(_):
           self?.showSimpleAlert(withMessage: "Something went wrong while fetching products")
         }
     }
   }
   
+  // MARK:- Delegate methods
   func addProductToCart(_ viewModel: ProductRepresentable) {
     ECommerceStoreAPIRequests.addProductToCart(productId: viewModel.productId) { [weak self] (result: AddToCartResult<AddToCartResponse>) in
         switch result {
@@ -78,4 +83,3 @@ class ProductsViewController: UIViewController, ProductViewCellDelegate {
   }
 
 }
-

@@ -19,8 +19,5 @@ extension WishlistProduct {
   @NSManaged public var id: Int16
   @NSManaged public var name: String?
   @NSManaged public var category: String?
-  @NSManaged public var price: String?
-  @NSManaged public var oldPrice: String?
-  @NSManaged public var stock: Int16
   
 }

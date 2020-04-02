@@ -33,8 +33,14 @@
 		720245812432180C0058C344 /* ECommerceStoreAPIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720245802432180C0058C344 /* ECommerceStoreAPIRequests.swift */; };
 		72024582243219550058C344 /* Fetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720245752430DE780058C344 /* Fetch.framework */; platformFilter = ios; };
 		72024583243219550058C344 /* Fetch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720245752430DE780058C344 /* Fetch.framework */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		72377C1D2435D639003CD25E /* ProductRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C1C2435D639003CD25E /* ProductRepresentable.swift */; };
+		72377C1D2435D639003CD25E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C1C2435D639003CD25E /* ProductViewModel.swift */; };
 		72377C1F2435DF6D003CD25E /* ViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C1E2435DF6D003CD25E /* ViewController+Alerts.swift */; };
+		72377C252435EC82003CD25E /* WishListDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C242435EC82003CD25E /* WishListDataControllerTests.swift */; };
+		72377C262435EE1B003CD25E /* ECommerceStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 720245242430CF4C0058C344 /* ECommerceStore.xcdatamodeld */; };
+		72377C282436012C003CD25E /* WishListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C272436012C003CD25E /* WishListDataSource.swift */; };
+		72377C2A243601AF003CD25E /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C29243601AF003CD25E /* WishlistTableViewCell.swift */; };
+		72377C2C24360230003CD25E /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C2B24360230003CD25E /* WishListViewModel.swift */; };
+		72377C2E24361589003CD25E /* RepresentableProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72377C2D24361589003CD25E /* RepresentableProtocols.swift */; };
 		7276C7A62433CA4200C0E963 /* ProductListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */; };
 		7276C7A82433D4B000C0E963 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A72433D4B000C0E963 /* Extension+String.swift */; };
 		7276C7AA2433D97A00C0E963 /* ProductListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */; };
@@ -141,8 +147,13 @@
 		72024579243214210058C344 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 		7202457B243214EF0058C344 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		720245802432180C0058C344 /* ECommerceStoreAPIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECommerceStoreAPIRequests.swift; sourceTree = "<group>"; };
-		72377C1C2435D639003CD25E /* ProductRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepresentable.swift; sourceTree = "<group>"; };
+		72377C1C2435D639003CD25E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		72377C1E2435DF6D003CD25E /* ViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Alerts.swift"; sourceTree = "<group>"; };
+		72377C242435EC82003CD25E /* WishListDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDataControllerTests.swift; sourceTree = "<group>"; };
+		72377C272436012C003CD25E /* WishListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDataSource.swift; sourceTree = "<group>"; };
+		72377C29243601AF003CD25E /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
+		72377C2B24360230003CD25E /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
+		72377C2D24361589003CD25E /* RepresentableProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentableProtocols.swift; sourceTree = "<group>"; };
 		7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSource.swift; sourceTree = "<group>"; };
 		7276C7A72433D4B000C0E963 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDataSourceTests.swift; sourceTree = "<group>"; };
@@ -253,6 +264,7 @@
 			children = (
 				720245372430CF510058C344 /* Info.plist */,
 				7276C7A92433D97A00C0E963 /* ProductListDataSourceTests.swift */,
+				72377C242435EC82003CD25E /* WishListDataControllerTests.swift */,
 				7276C7AC2433DB0D00C0E963 /* TestProducts.swift */,
 				7276C7AE2433DC8300C0E963 /* TestProducts.json */,
 			);
@@ -313,8 +325,9 @@
 			children = (
 				7202451D2430CF4C0058C344 /* ProductsViewController.swift */,
 				7200223A243342750021CEF5 /* ProductViewCell.swift */,
-				72377C1C2435D639003CD25E /* ProductRepresentable.swift */,
+				72377C1C2435D639003CD25E /* ProductViewModel.swift */,
 				7276C7A52433CA4200C0E963 /* ProductListDataSource.swift */,
+				72377C2D24361589003CD25E /* RepresentableProtocols.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -323,9 +336,12 @@
 			isa = PBXGroup;
 			children = (
 				7202451F2430CF4C0058C344 /* WishListViewController.swift */,
+				72377C272436012C003CD25E /* WishListDataSource.swift */,
+				72377C29243601AF003CD25E /* WishlistTableViewCell.swift */,
+				72377C2B24360230003CD25E /* WishListViewModel.swift */,
+				729E127424353B800054FA03 /* WishListDataController.swift */,
 				729E1270243539830054FA03 /* WishlistProduct+CoreDataClass.swift */,
 				729E1271243539830054FA03 /* WishlistProduct+CoreDataProperties.swift */,
-				729E127424353B800054FA03 /* WishListDataController.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -643,9 +659,13 @@
 				7276C7A82433D4B000C0E963 /* Extension+String.swift in Sources */,
 				720245202430CF4C0058C344 /* WishListViewController.swift in Sources */,
 				7276C7A62433CA4200C0E963 /* ProductListDataSource.swift in Sources */,
+				72377C2A243601AF003CD25E /* WishlistTableViewCell.swift in Sources */,
 				729E127524353B800054FA03 /* WishListDataController.swift in Sources */,
 				720245262430CF4C0058C344 /* ECommerceStore.xcdatamodeld in Sources */,
-				72377C1D2435D639003CD25E /* ProductRepresentable.swift in Sources */,
+				72377C282436012C003CD25E /* WishListDataSource.swift in Sources */,
+				72377C2C24360230003CD25E /* WishListViewModel.swift in Sources */,
+				72377C1D2435D639003CD25E /* ProductViewModel.swift in Sources */,
+				72377C2E24361589003CD25E /* RepresentableProtocols.swift in Sources */,
 				7200223B243342750021CEF5 /* ProductViewCell.swift in Sources */,
 				729E1272243539830054FA03 /* WishlistProduct+CoreDataClass.swift in Sources */,
 				7202451E2430CF4C0058C344 /* ProductsViewController.swift in Sources */,
@@ -658,6 +678,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72377C262435EE1B003CD25E /* ECommerceStore.xcdatamodeld in Sources */,
+				72377C252435EC82003CD25E /* WishListDataControllerTests.swift in Sources */,
 				7276C7AD2433DB0D00C0E963 /* TestProducts.swift in Sources */,
 				7276C7AA2433D97A00C0E963 /* ProductListDataSourceTests.swift in Sources */,
 			);

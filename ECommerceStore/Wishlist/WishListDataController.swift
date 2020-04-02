@@ -12,34 +12,46 @@ import ECommerceStoreAPI
 
 class WishListDataController {
   
-  var persistentContainer: NSPersistentContainer
+  let persistentContainer: NSPersistentContainer!
   
-  init() {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    persistentContainer = appDelegate.persistentContainer
+  init(container: NSPersistentContainer) {
+      self.persistentContainer = container
+      self.persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
   }
   
-  func addProductToWishlist(viewModel: ProductRepresentable) throws {
-    
+  convenience init() {
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      self.init(container: appDelegate.persistentContainer)
+  }
+  
+  func addProductToWishlist(viewModel: WishListRepresentable) throws {
     let managedContext = persistentContainer.viewContext
     let wishlistProduct = WishlistProduct(context: managedContext)
     wishlistProduct.id = Int16(viewModel.productId)
     wishlistProduct.name = viewModel.productName
     wishlistProduct.category = viewModel.productCategory
-    wishlistProduct.price = viewModel.productPrice
-    wishlistProduct.stock = Int16(viewModel.productStock)
-    wishlistProduct.oldPrice = viewModel.productOldPrice
     
     managedContext.insert(wishlistProduct)
     try managedContext.save()
   }
   
-  func removeProductFromWishlist(viewModel: ProductRepresentable) throws {
+  func removeProductFromWishlist(viewModel: WishListRepresentable) throws {
+    let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: "WishlistProduct")
+    fetchRequest.predicate = NSPredicate(format: "id == %d", Int16(viewModel.productId))
+    try removeProductsWithFetchRequest(fetchRequest)
+  }
+  
+  func removeAllProductsFromWishlist() throws {
+    let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: "WishlistProduct")
+    try removeProductsWithFetchRequest(fetchRequest)
+  }
+  
+  private func removeProductsWithFetchRequest(_ request: NSFetchRequest<NSFetchRequestResult>) throws {
     let managedContext = persistentContainer.viewContext
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "WishlistProduct")
-    request.predicate = NSPredicate(format: "id == %d", Int16(viewModel.productId))
-    let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
-    try managedContext.execute(deleteRequest)
+    let products = try managedContext.fetch(request)
+    for case let product as NSManagedObject in products {
+      managedContext.delete(product)
+    }
     try managedContext.save()
   }
   

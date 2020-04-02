@@ -9,15 +9,6 @@
 import UIKit
 import ECommerceStoreAPI
 
-protocol ProductRepresentable {
-  var productId: Int { get }
-  var productName: String { get }
-  var productCategory: String { get }
-  var productPrice: String { get }
-  var productOldPrice: String { get }
-  var productStock: Int { get }
-}
-
 struct ProductViewModel: ProductRepresentable {
   let productId: Int
   let productName: String

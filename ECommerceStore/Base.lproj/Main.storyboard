@@ -164,32 +164,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-vA-saC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.5" y="477.5" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishlistTableViewCell" rowHeight="80" id="CMN-Yo-0gy" customClass="WishlistTableViewCell" customModule="ECommerceStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CMN-Yo-0gy" id="Zbd-2t-HVw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-ts-fbb">
+                                                    <rect key="frame" x="20" y="10" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8t-Tr-Z8l">
+                                                    <rect key="frame" x="255" y="40.5" width="149" height="30"/>
+                                                    <state key="normal" title="Remove from Wishlist"/>
+                                                    <connections>
+                                                        <action selector="removeFromWishListPressed" destination="CMN-Yo-0gy" eventType="touchUpInside" id="Rr2-5O-JHF"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL5-8M-RCr">
+                                                    <rect key="frame" x="20" y="41" width="71" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qL5-8M-RCr" secondAttribute="bottom" constant="10" id="5qX-1a-6D9"/>
+                                                <constraint firstItem="qL5-8M-RCr" firstAttribute="top" secondItem="Hc6-ts-fbb" secondAttribute="bottom" constant="10" id="IQB-nD-oYg"/>
+                                                <constraint firstItem="Hc6-ts-fbb" firstAttribute="top" secondItem="Zbd-2t-HVw" secondAttribute="top" constant="10" id="b4l-oK-zZK"/>
+                                                <constraint firstAttribute="trailing" secondItem="B8t-Tr-Z8l" secondAttribute="trailing" constant="10" id="itD-1l-Q5N"/>
+                                                <constraint firstItem="qL5-8M-RCr" firstAttribute="leading" secondItem="Zbd-2t-HVw" secondAttribute="leading" constant="20" id="qnF-V0-FFC"/>
+                                                <constraint firstItem="B8t-Tr-Z8l" firstAttribute="centerY" secondItem="qL5-8M-RCr" secondAttribute="centerY" id="t3F-hR-oZO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Hc6-ts-fbb" firstAttribute="leading" secondItem="CMN-Yo-0gy" secondAttribute="leading" constant="20" id="YCd-Ki-hB1"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="qL5-8M-RCr" id="FfK-Ug-arA"/>
+                                            <outlet property="nameLabel" destination="Hc6-ts-fbb" id="gRl-dj-lz3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="ibf-vA-saC" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="7xv-fE-pyd"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="ibf-vA-saC" secondAttribute="trailing" id="VDD-4D-u2F"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="ibf-vA-saC" secondAttribute="bottom" id="iHh-Wu-ZyY"/>
+                            <constraint firstItem="ibf-vA-saC" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="sWP-KL-Uf4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wishlist" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="wishListTableView" destination="ibf-vA-saC" id="lEt-rv-1fg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
