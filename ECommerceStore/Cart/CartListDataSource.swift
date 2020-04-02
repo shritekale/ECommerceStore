@@ -32,7 +32,7 @@ class CartListDataSource: NSObject, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "CartItemTableViewCell", for: indexPath) as! CartItemTableViewCell
-    if let viewModel = getViewModelFor(productId: cartItems[indexPath.row].id) {
+    if let viewModel = getViewModelFor(cartItem: cartItems[indexPath.row]) {
       cell.configure(withViewModel: viewModel, delegate: viewCellDelegate)
     }
     return cell
@@ -45,6 +45,8 @@ class CartListDataSource: NSObject, UITableViewDataSource {
           self?.cartItems = response.cartItems
           if response.cartItems.count > 0 {
             self?.fetchProducts()
+          } else {
+            self?.tableView.reloadData()
           }
         case .failure(_):
           print("error")
@@ -64,9 +66,9 @@ class CartListDataSource: NSObject, UITableViewDataSource {
     }
   }
   
-  private func getViewModelFor(productId: Int) -> ProductViewModel? {
-    if let product = products.first(where: {$0.id == productId}) {
-      return ProductViewModel(product: product)
+  private func getViewModelFor(cartItem: CartItem) -> CartViewModel? {
+    if let product = products.first(where: {$0.id == cartItem.productId}) {
+      return CartViewModel(product: product, cartId: cartItem.id)
     } else {
       return nil
     }

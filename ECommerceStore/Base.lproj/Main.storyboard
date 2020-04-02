@@ -245,33 +245,27 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartItemTableViewCell" rowHeight="120" id="cy1-qN-FSj" customClass="CartItemTableViewCell" customModule="ECommerceStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartItemTableViewCell" rowHeight="100" id="cy1-qN-FSj" customClass="CartItemTableViewCell" customModule="ECommerceStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cy1-qN-FSj" id="2uW-dZ-txw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVL-XU-Xpc">
-                                                    <rect key="frame" x="20" y="10" width="384" height="21"/>
+                                                    <rect key="frame" x="20" y="15" width="384" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="low-TO-Uzo">
-                                                    <rect key="frame" x="20" y="49.5" width="70.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC3-L6-NQo">
-                                                    <rect key="frame" x="20" y="89" width="384" height="21"/>
+                                                    <rect key="frame" x="20" y="64" width="70.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTx-RZ-yyU">
-                                                    <rect key="frame" x="282" y="45" width="122" height="30"/>
+                                                    <rect key="frame" x="282" y="35" width="122" height="30"/>
                                                     <state key="normal" title="Remove from cart"/>
                                                     <connections>
                                                         <action selector="removeProductCartPressed" destination="cy1-qN-FSj" eventType="touchUpInside" id="dey-fw-2Ev"/>
@@ -279,17 +273,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zVL-XU-Xpc" firstAttribute="top" secondItem="2uW-dZ-txw" secondAttribute="top" constant="10" id="3Lt-O2-JP2"/>
+                                                <constraint firstItem="zVL-XU-Xpc" firstAttribute="top" secondItem="2uW-dZ-txw" secondAttribute="top" constant="15" id="3Lt-O2-JP2"/>
+                                                <constraint firstItem="low-TO-Uzo" firstAttribute="top" secondItem="zVL-XU-Xpc" secondAttribute="bottom" constant="28" id="5EX-eZ-7Mg"/>
                                                 <constraint firstAttribute="trailing" secondItem="OTx-RZ-yyU" secondAttribute="trailing" constant="10" id="7vR-JW-XD3"/>
                                                 <constraint firstItem="zVL-XU-Xpc" firstAttribute="leading" secondItem="2uW-dZ-txw" secondAttribute="leading" constant="20" id="CSs-wY-veP"/>
-                                                <constraint firstItem="low-TO-Uzo" firstAttribute="centerY" secondItem="2uW-dZ-txw" secondAttribute="centerY" id="IPr-g2-P5o"/>
-                                                <constraint firstItem="CC3-L6-NQo" firstAttribute="top" secondItem="low-TO-Uzo" secondAttribute="bottom" constant="18.5" id="M00-e5-3Td"/>
-                                                <constraint firstAttribute="trailing" secondItem="CC3-L6-NQo" secondAttribute="trailing" constant="10" id="dWx-o5-hJt"/>
+                                                <constraint firstAttribute="bottom" secondItem="low-TO-Uzo" secondAttribute="bottom" constant="15" id="LqN-Rm-ShY"/>
+                                                <constraint firstItem="OTx-RZ-yyU" firstAttribute="centerY" secondItem="2uW-dZ-txw" secondAttribute="centerY" id="UQe-UD-Rw5"/>
                                                 <constraint firstItem="OTx-RZ-yyU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="low-TO-Uzo" secondAttribute="trailing" constant="20" id="ddV-T8-Td4"/>
-                                                <constraint firstItem="OTx-RZ-yyU" firstAttribute="centerY" secondItem="low-TO-Uzo" secondAttribute="centerY" id="dvn-99-SJ0"/>
-                                                <constraint firstAttribute="bottom" secondItem="CC3-L6-NQo" secondAttribute="bottom" constant="10" id="gkO-BC-Uzq"/>
-                                                <constraint firstItem="CC3-L6-NQo" firstAttribute="leading" secondItem="2uW-dZ-txw" secondAttribute="leading" constant="20" id="hBd-oG-JOZ"/>
-                                                <constraint firstItem="low-TO-Uzo" firstAttribute="top" secondItem="zVL-XU-Xpc" secondAttribute="bottom" constant="18.5" id="iB2-tq-fPx"/>
                                                 <constraint firstAttribute="trailing" secondItem="zVL-XU-Xpc" secondAttribute="trailing" constant="10" id="iT0-v5-Edg"/>
                                                 <constraint firstItem="low-TO-Uzo" firstAttribute="leading" secondItem="2uW-dZ-txw" secondAttribute="leading" constant="20" id="nDp-hJ-xbJ"/>
                                             </constraints>
@@ -297,7 +287,6 @@
                                         <connections>
                                             <outlet property="categoryLabel" destination="low-TO-Uzo" id="zWR-fl-foI"/>
                                             <outlet property="nameLabel" destination="zVL-XU-Xpc" id="VEG-l8-RWj"/>
-                                            <outlet property="priceLabel" destination="CC3-L6-NQo" id="wkM-Vv-rgz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -9,17 +9,16 @@
 import UIKit
 
 protocol CartItemTableViewCellDelegate {
-  func removeProductFromCart(_ viewModel: ProductRepresentable)
+  func removeProductFromCart(_ viewModel: CartRepresentable)
 }
 
 class CartItemTableViewCell: UITableViewCell {
   
   @IBOutlet private weak var nameLabel: UILabel!
   @IBOutlet private weak var categoryLabel: UILabel!
-  @IBOutlet private weak var priceLabel: UILabel!
 
   private var delegate: CartItemTableViewCellDelegate?
-  private var viewModel: ProductRepresentable?
+  private var viewModel: CartRepresentable?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -29,12 +28,11 @@ class CartItemTableViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
   
-  func configure(withViewModel viewModel: ProductRepresentable, delegate:CartItemTableViewCellDelegate) {
+  func configure(withViewModel viewModel: CartRepresentable, delegate:CartItemTableViewCellDelegate) {
     self.viewModel = viewModel
     self.delegate = delegate
     nameLabel.text = viewModel.productName
     categoryLabel.text = viewModel.productCategory
-    priceLabel.text = viewModel.productPrice
   }
 
   @IBAction func removeProductCartPressed() {

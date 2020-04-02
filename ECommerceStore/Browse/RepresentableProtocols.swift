@@ -19,3 +19,7 @@ protocol ProductRepresentable: WishListRepresentable {
   var productOldPrice: String { get }
   var productStock: Int { get }
 }
+
+protocol CartRepresentable: WishListRepresentable {
+  var productCartId: Int { get }
+}

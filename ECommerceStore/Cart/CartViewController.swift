@@ -39,8 +39,16 @@ class CartViewController: UIViewController, CartItemTableViewCellDelegate {
     }
   }
 
-  func removeProductFromCart(_ viewModel: ProductRepresentable) {
-    
+  func removeProductFromCart(_ viewModel: CartRepresentable) {
+    ECommerceStoreAPIRequests.deleteProductFromCart(cartId: viewModel.productCartId) { [weak self] (result: DeleteFromCartResult<DeleteFromCartResponse>) in
+        switch result {
+        case .success(_):
+          self?.showSimpleAlert(withMessage: "Product deleted from cart")
+          self?.cartListDataSource?.updateCartItems()
+        case .failure(_):
+          self?.showSimpleAlert(withMessage: "Something went wrong while deleting product from cart")
+        }
+    }
   }
 
   
