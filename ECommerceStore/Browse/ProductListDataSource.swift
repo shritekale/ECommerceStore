@@ -11,11 +11,15 @@ import ECommerceStoreAPI
 
 class ProductListDataSource: NSObject, UITableViewDataSource {
 
-  var products : [Product] = [Product]()
-  var viewCellDelegate: ProductViewCellProtocol
+  private var products : [Product] = [Product]()
+  private let viewCellDelegate: ProductViewCellDelegate
 
-  init(viewCellDelegate: ProductViewCellProtocol) {
+  init(viewCellDelegate: ProductViewCellDelegate) {
       self.viewCellDelegate = viewCellDelegate
+  }
+  
+  func updateProducts(products: [Product]) {
+    self.products = products
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,8 +28,8 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ProductViewCell", for: indexPath) as! ProductViewCell
-    cell.delegate = viewCellDelegate
-    cell.configure(withViewModel: ProductViewModel(product: products[indexPath.row]))
+    let viewModel = ProductViewModel(product: products[indexPath.row])
+    cell.configure(withViewModel: viewModel, delegate: viewCellDelegate)
     return cell
   }
   

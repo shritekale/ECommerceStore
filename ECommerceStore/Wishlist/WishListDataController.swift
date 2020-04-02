@@ -14,11 +14,8 @@ class WishListDataController {
   
   var persistentContainer: NSPersistentContainer
   
-  init?() {
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-      return nil
-    }
-    
+  init() {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     persistentContainer = appDelegate.persistentContainer
   }
   

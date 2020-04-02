@@ -9,6 +9,12 @@
 import UIKit
 import ECommerceStoreAPI
 
+protocol ProductViewCellDelegate {
+  func addProductToCart(_ viewModel: ProductRepresentable)
+  func addProductToWishList(_ viewModel: ProductRepresentable)
+  func removeProductFromWishList(_ viewModel: ProductRepresentable)
+}
+
 class ProductViewCell: UITableViewCell {
   
   @IBOutlet private weak var nameLabel: UILabel!
@@ -21,12 +27,12 @@ class ProductViewCell: UITableViewCell {
   @IBOutlet private weak var addToWishListButton: UIButton!
   @IBOutlet private weak var removeFromWishListButton: UIButton!
   
-  var delegate: ProductViewCellProtocol?
-  
+  private var delegate: ProductViewCellDelegate?
   private var viewModel: ProductRepresentable?
     
-  func configure(withViewModel viewModel: ProductRepresentable) {
+  func configure(withViewModel viewModel: ProductRepresentable, delegate:ProductViewCellDelegate) {
     self.viewModel = viewModel
+    self.delegate = delegate
     nameLabel.text = viewModel.productName
     categoryLabel.text = viewModel.productCategory
     priceLabel.text = viewModel.productPrice
@@ -40,7 +46,7 @@ class ProductViewCell: UITableViewCell {
   private func updateWishListStatus(productId: Int) {
     let wishListController = WishListDataController()
     do {
-      let wishListProduct = try wishListController?.getWishlistProduct(withId: productId)
+      let wishListProduct = try wishListController.getWishlistProduct(withId: productId)
       if wishListProduct?.count == 0 {
         addToWishListButton.isHidden = false
         removeFromWishListButton.isHidden = true
@@ -80,8 +86,3 @@ class ProductViewCell: UITableViewCell {
 
 }
 
-protocol ProductViewCellProtocol {
-  func addProductToCart(_ viewModel: ProductRepresentable)
-  func addProductToWishList(_ viewModel: ProductRepresentable)
-  func removeProductFromWishList(_ viewModel: ProductRepresentable)
-}

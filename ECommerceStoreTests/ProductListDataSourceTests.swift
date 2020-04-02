@@ -27,14 +27,16 @@ class ProductListDataSourceTests: XCTestCase {
     let numberOfCellsBeforeUpdate = productListDataSource.tableView(tableView, numberOfRowsInSection: 0)
     expect(numberOfCellsBeforeUpdate).to(equal(0))
 
-    productListDataSource.products = TestProducts.getProducts()
+    productListDataSource.updateProducts(products: TestProducts.getProducts())
     let numberOfCellsAfterUpdate = productListDataSource.tableView(tableView, numberOfRowsInSection: 0)
     expect(numberOfCellsAfterUpdate).to(equal(2))
   }
 
 }
 
-class MockViewCellDelegate: ProductViewCellProtocol {
-  func addProductToCart(_ product: Product) {}
-  func addProductToWishList(_ product: Product) {}
+class MockViewCellDelegate: ProductViewCellDelegate {
+  func addProductToCart(_ viewModel: ProductRepresentable) {}
+  func addProductToWishList(_ viewModel: ProductRepresentable) {}
+  func removeProductFromWishList(_ viewModel: ProductRepresentable) {}
+
 }
