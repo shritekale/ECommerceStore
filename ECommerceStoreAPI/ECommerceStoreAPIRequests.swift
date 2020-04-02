@@ -27,9 +27,9 @@ public class ECommerceStoreAPIRequests {
     }
   }
   
-  public static func addProductToCart(product:Product, completion: @escaping (AddToCartResult<AddToCartResponse>) -> Void) {
+  public static func addProductToCart(productId:Int, completion: @escaping (AddToCartResult<AddToCartResponse>) -> Void) {
     let session = Session()
-    let request = AddToCartRequest(productId: String(product.id))
+    let request = AddToCartRequest(productId: String(productId))
     session.perform(request) { (result: FetchResult<AddToCartResponse>) in
       switch result {
       case .success(let response):

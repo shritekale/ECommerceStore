@@ -25,7 +25,7 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ProductViewCell", for: indexPath) as! ProductViewCell
     cell.delegate = viewCellDelegate
-    cell.updateCellWithProduct(products[indexPath.row])
+    cell.configure(withViewModel: ProductViewModel(product: products[indexPath.row]))
     return cell
   }
   

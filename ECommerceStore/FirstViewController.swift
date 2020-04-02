@@ -38,8 +38,8 @@ class FirstViewController: UIViewController, ProductViewCellProtocol {
     }
   }
   
-  func addProductToCart(_ product: Product) {
-    ECommerceStoreAPIRequests.addProductToCart(product: product) { [weak self] (result: AddToCartResult<AddToCartResponse>) in
+  func addProductToCart(_ viewModel: ProductRepresentable) {
+    ECommerceStoreAPIRequests.addProductToCart(productId: viewModel.productId) { [weak self] (result: AddToCartResult<AddToCartResponse>) in
         switch result {
         case .success(let response):
           self?.showAlert(message: response.message)
@@ -51,7 +51,38 @@ class FirstViewController: UIViewController, ProductViewCellProtocol {
     }
   }
   
-  func addProductToWishList(_ product: Product) {}
+  func addProductToWishList(_ viewModel: ProductRepresentable) {
+    guard let wishListController = WishListDataController() else {
+      return
+    }
+    
+    do {
+      try wishListController.addProductToWishlist(viewModel: viewModel)
+    } catch  {
+      showAlert(message: "Something went wrong while adding product to wishlist")
+      return
+    }
+    
+    showAlert(message: "\(viewModel.productName) added to wishlist")
+    productTableView.reloadData()
+  }
+  
+  func removeProductFromWishList(_ viewModel: ProductRepresentable) {
+    guard let wishListController = WishListDataController() else {
+      return
+    }
+    
+    do {
+      try wishListController.removeProductFromWishlist(viewModel: viewModel)
+    } catch  {
+      showAlert(message: "Something went wrong while removing product from wishlist")
+      return
+    }
+    
+    showAlert(message: "\(viewModel.productName) removed from wishlist")
+    productTableView.reloadData()
+  }
+
   
   private func showAlert(message: String) {
     let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
