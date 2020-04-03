@@ -45,6 +45,7 @@ class WishListDataControllerTests: XCTestCase {
   }
   
   override func tearDown() {
+    wishListDataController = nil
   }
   
   func testSingleItemsIsAddedAndRemovedFromWishlistCorrectly() {
@@ -94,7 +95,6 @@ class WishListDataControllerTests: XCTestCase {
   }
 
 }
-
 
 struct MockProduct: ProductRepresentable {
   let productId: Int

@@ -10,8 +10,8 @@ import Foundation
 import Fetch
 
 struct ProductRequest: Request {
-  let url = URL(string: "https://2klqdzs603.execute-api.eu-west-2.amazonaws.com/cloths/products")!
+  let url = URL(string: "\(EcommerceStoreGlobals.apiUrl)/\(EcommerceStoreGlobals.apiProductsPath)")! // TODO: Construct from NSURLComponents
   let method = HTTPMethod.get
-  let headers: [String: String]? = ["X-API-KEY": "DD95261772-4FC1-470B-ADE8-2E5D798E3172"]
+  let headers: [String: String]? = ["X-API-KEY": EcommerceStoreGlobals.apiKey]
   let body: Data? = nil
 }

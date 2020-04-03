@@ -16,6 +16,7 @@ class CartListDataSource: NSObject, UITableViewDataSource {
 
   private let viewCellDelegate: CartItemTableViewCellDelegate
   private let tableView: UITableView
+  var apiRequests = ECommerceStoreAPIRequests.self
 
   init(tableView: UITableView, viewCellDelegate: CartItemTableViewCellDelegate) {
     self.viewCellDelegate = viewCellDelegate
@@ -39,7 +40,7 @@ class CartListDataSource: NSObject, UITableViewDataSource {
   }
     
   private func fetchCartItems() {
-    ECommerceStoreAPIRequests.fetchCart { [weak self] (result: GetCartResult<CartResponse>) in
+    apiRequests.fetchCart { [weak self] (result: GetCartResult<CartResponse>) in
         switch result {
         case .success(let response):
           self?.cartItems = response.cartItems

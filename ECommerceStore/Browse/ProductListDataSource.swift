@@ -14,6 +14,7 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
   private var products : [Product] = [Product]()
   private let viewCellDelegate: ProductViewCellDelegate
   private let tableView: UITableView
+  var apiRequests = ECommerceStoreAPIRequests.self
 
   init(tableView: UITableView, viewCellDelegate: ProductViewCellDelegate) {
     self.viewCellDelegate = viewCellDelegate
@@ -36,7 +37,7 @@ class ProductListDataSource: NSObject, UITableViewDataSource {
   }
   
   private func fetchProducts() {
-    ECommerceStoreAPIRequests.fetchProducts { [weak self] (result: ProductResult<ProductResponse>) in
+    apiRequests.fetchProducts { [weak self] (result: ProductResult<ProductResponse>) in
         switch result {
         case .success(let response):
           self?.products = response.products

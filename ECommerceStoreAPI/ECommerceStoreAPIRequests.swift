@@ -14,7 +14,14 @@ public typealias AddToCartResult<AddToCartResponse> = Result<AddToCartResponse, 
 public typealias GetCartResult<CartResponse> = Result<CartResponse, Error>
 public typealias DeleteFromCartResult<DeleteFromCartResponse> = Result<DeleteFromCartResponse, Error>
 
-public class ECommerceStoreAPIRequests {
+public protocol ECommerceStoreAPI {
+  static func fetchProducts(completion: @escaping (ProductResult<ProductResponse>) -> Void)
+  static func addProductToCart(productId:Int, completion: @escaping (AddToCartResult<AddToCartResponse>) -> Void)
+  static func fetchCart(completion: @escaping (GetCartResult<CartResponse>) -> Void)
+  static func deleteProductFromCart(cartId:Int, completion: @escaping (DeleteFromCartResult<DeleteFromCartResponse>) -> Void)
+}
+
+public class ECommerceStoreAPIRequests: ECommerceStoreAPI {
   
   public static func fetchProducts(completion: @escaping (ProductResult<ProductResponse>) -> Void) {
     let session = Session()

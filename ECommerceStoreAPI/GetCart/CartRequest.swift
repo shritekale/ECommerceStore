@@ -10,8 +10,8 @@ import Foundation
 import Fetch
 
 struct CartRequest: Request {
-  let url = URL(string: "https://2klqdzs603.execute-api.eu-west-2.amazonaws.com/cloths/cart")!
+  let url = URL(string: "\(EcommerceStoreGlobals.apiUrl)/\(EcommerceStoreGlobals.apiCartPath)")!
   let method = HTTPMethod.get
-  let headers: [String: String]? = ["X-API-KEY": "DD95261772-4FC1-470B-ADE8-2E5D798E3172"]
+  let headers: [String: String]? = ["X-API-KEY": EcommerceStoreGlobals.apiKey]
   let body: Data? = nil
 }
