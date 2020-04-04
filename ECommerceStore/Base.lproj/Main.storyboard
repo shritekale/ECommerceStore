@@ -29,48 +29,56 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lx-7g-bhW">
                                                     <rect key="frame" x="20" y="5" width="0.0" height="20.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductName"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-uF-W9g">
                                                     <rect key="frame" x="20" y="35.5" width="0.0" height="19.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductCategory"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPJ-YB-Y83">
                                                     <rect key="frame" x="20" y="65" width="42" height="20"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductPriceLabel"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-Zh-UGf">
                                                     <rect key="frame" x="67" y="65.5" width="27" height="19.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductPrice"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(N/A)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ti-PS-L9S">
                                                     <rect key="frame" x="104" y="65.5" width="38.5" height="19.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductOldPrice"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-uB-mGK">
                                                     <rect key="frame" x="20" y="95" width="67" height="20"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="QuantityLabel"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLH-GZ-iXg">
                                                     <rect key="frame" x="92" y="95.5" width="10" height="19.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductQuantity"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-hJ-D8d">
                                                     <rect key="frame" x="265" y="90" width="114" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Button to add product to cart" identifier="AddToCartButton" label="Add to cart button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5fQ-91-DRz"/>
                                                         <constraint firstAttribute="width" constant="114" id="dcN-TU-avi"/>
@@ -82,6 +90,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVT-dr-gi1">
                                                     <rect key="frame" x="265" y="55" width="114" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Button to add product to wishlist" identifier="AddToWishListButton" label="Add to wish list button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="nMT-47-ZrJ"/>
                                                         <constraint firstAttribute="width" constant="114" id="w4D-S0-9Ns"/>
@@ -93,6 +102,7 @@
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltc-d7-V1C">
                                                     <rect key="frame" x="248" y="17" width="149" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Button to remove product from wishlist" identifier="RemoveFromWishlistButton" label="Remove from wishlist button"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="DqN-dU-XuB"/>
                                                         <constraint firstAttribute="width" constant="149" id="aR3-5F-ub2"/>
@@ -130,6 +140,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="EVT-dr-gi1" secondAttribute="trailing" constant="35" id="wpq-Xq-yDJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" hint="Product Information" identifier="ProductCell" label="Product Information">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="addToCartButton" destination="tOT-hJ-D8d" id="JUZ-ES-aUl"/>
                                             <outlet property="addToWishListButton" destination="EVT-dr-gi1" id="fPU-mT-jDh"/>
@@ -177,12 +190,14 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc6-ts-fbb">
                                                     <rect key="frame" x="20" y="10" width="45" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductName"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8t-Tr-Z8l">
                                                     <rect key="frame" x="255" y="40.5" width="149" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Button to remove product from wishlist" identifier="RemoveFromWishListButton" label="Remove from Wishlist"/>
                                                     <state key="normal" title="Remove from Wishlist"/>
                                                     <connections>
                                                         <action selector="removeFromWishListPressed" destination="CMN-Yo-0gy" eventType="touchUpInside" id="Rr2-5O-JHF"/>
@@ -190,6 +205,7 @@
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL5-8M-RCr">
                                                     <rect key="frame" x="20" y="41" width="71" height="29"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductCategory"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -204,6 +220,9 @@
                                                 <constraint firstItem="B8t-Tr-Z8l" firstAttribute="centerY" secondItem="qL5-8M-RCr" secondAttribute="centerY" id="t3F-hR-oZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" hint="Wishlist Information" identifier="WishlistTableViewCell" label="Wishlist Information">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="Hc6-ts-fbb" firstAttribute="leading" secondItem="CMN-Yo-0gy" secondAttribute="leading" constant="20" id="YCd-Ki-hB1"/>
                                         </constraints>
@@ -254,18 +273,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVL-XU-Xpc">
                                                     <rect key="frame" x="20" y="15" width="384" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductName"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="low-TO-Uzo">
                                                     <rect key="frame" x="20" y="64" width="70.5" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="ProductCategory"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTx-RZ-yyU">
                                                     <rect key="frame" x="282" y="35" width="122" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Button to remove product from cart" identifier="RemoveFromCartButton" label="Remove from cart"/>
                                                     <state key="normal" title="Remove from cart"/>
                                                     <connections>
                                                         <action selector="removeProductCartPressed" destination="cy1-qN-FSj" eventType="touchUpInside" id="dey-fw-2Ev"/>
@@ -284,6 +306,9 @@
                                                 <constraint firstItem="low-TO-Uzo" firstAttribute="leading" secondItem="2uW-dZ-txw" secondAttribute="leading" constant="20" id="nDp-hJ-xbJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" hint="Shows information of product in cart" identifier="CartItemTableViewCell" label="Cart Information">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="categoryLabel" destination="low-TO-Uzo" id="zWR-fl-foI"/>
                                             <outlet property="nameLabel" destination="zVL-XU-Xpc" id="VEG-l8-RWj"/>
